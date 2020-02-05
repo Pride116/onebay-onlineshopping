@@ -1,5 +1,6 @@
 package com.onebayshopping.pride.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,16 +11,17 @@ public class Category {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name ="Category_Id")
 	private int id;
+	@Column(name ="Category_Name")
 	private String name;
 	
 	public Category() {
 		
 	}
 	
-	public Category(int id, String name) {
-		super();
-		this.id = id;
+	public Category(String name) {
+		
 		this.name = name;
 	}
 
@@ -27,9 +29,7 @@ public class Category {
 		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 
 	public String getName() {
 		return name;
