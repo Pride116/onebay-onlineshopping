@@ -13,18 +13,26 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.onebayshopping.pride.model.Product;
 import com.onebayshopping.pride.service.ProductService;
 
+@EnableWebMvc
+@CrossOrigin("*")
 @RestController
 @RequestMapping("product")
-@CrossOrigin("*")
 public class ProductController {
 	
 	@Autowired
 	private ProductService productservice;
 	
+	@GetMapping("/hello")
+	public String hello()
+	{
+		
+		return "im running well";
+	}
 	//Add new  
 	
 	@PostMapping("/add")

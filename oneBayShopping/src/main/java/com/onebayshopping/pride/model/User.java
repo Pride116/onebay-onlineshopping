@@ -9,7 +9,7 @@ public class User {
 	@GeneratedValue
 	private int id;
 	private String firstName;
-	private String lastname;
+	private String lastName;
 	private String email;
 	private String phoneNumber;
 	
@@ -28,11 +28,11 @@ public class User {
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	public String getLastname() {
-		return lastname;
+	public String getLastName() {
+		return lastName;
 	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 	public String getEmail() {
 		return email;

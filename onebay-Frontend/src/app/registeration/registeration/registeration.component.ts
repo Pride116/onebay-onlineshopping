@@ -10,20 +10,18 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class RegisterationComponent implements OnInit {
 
-  user = new User("pride","seoke","0781526863","pride@gmail.com");
+  user = new User("","","","");
   
   message:any;
+  
   constructor(private userservice:UserService) { }
 
   ngOnInit() {
-    this.register(this.user);
-    this.user=null;
+
   }
-
-  register(user: User){
-
+  register(user){
     let res= this.userservice.adduser(user);
-    return res.subscribe(data=>this.message=data); 
+    return res.subscribe((data)=>this.message=data, error=>console.log(error)); 
   }
 
 }
