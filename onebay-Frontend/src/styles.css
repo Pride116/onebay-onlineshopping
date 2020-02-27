@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    padding-top: 56px;
+  }
+
+  body , html{
+
+    height: 100%;
+  }
+
+  .footer{
+    height: 60px;
+    bottom: 10px;
+    position: absolute;
+  }
+
+  .wrapper{
+    min-height: 100%;
+    position: relative;
+
+  }
+
+  .content{
+    padding-bottom: 100px;
+  }

@@ -8,11 +8,13 @@ import { UserService } from './service/user.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { from } from 'rxjs';
+import { BookComponent } from './Book/book/book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterationComponent
+    RegisterationComponent,
+    BookComponent
   ],
   imports: [
     BrowserModule,
