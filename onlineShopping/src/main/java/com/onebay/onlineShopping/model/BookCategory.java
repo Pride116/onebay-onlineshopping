@@ -21,7 +21,7 @@ public class BookCategory {
 	private Long id;
 	
 	@Column(name="category_name")
-	private String catgoryName;
+	private String categoryName;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
 	private Set<Book> book;
@@ -34,12 +34,12 @@ public class BookCategory {
 		this.id = id;
 	}
 
-	public String getCatgoryName() {
-		return catgoryName;
+	public String getCategoryName() {
+		return categoryName;
 	}
 
-	public void setCatgoryName(String catgoryName) {
-		this.catgoryName = catgoryName;
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
 	}
 
 	public Set<Book> getBook() {

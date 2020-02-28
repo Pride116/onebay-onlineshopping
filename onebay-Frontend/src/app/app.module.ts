@@ -9,12 +9,20 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { from } from 'rxjs';
 import { BookComponent } from './Book/book/book.component';
+import { NavigationComponent } from './menu/navigation/navigation.component';
+import { FooterComponent } from './menu/footer/footer.component';
+import { CartComponent } from './cart/cart/cart.component';
+import { LoginComponent } from './Login/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterationComponent,
-    BookComponent
+    BookComponent,
+    NavigationComponent,
+    FooterComponent,
+    CartComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
