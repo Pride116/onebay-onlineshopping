@@ -9,13 +9,12 @@
           <div class="col-md-6">
               <div class="row">
                   <div class="col-md-5">
-                      <input type="text" class="form-control" placeholder="search Items"/>
+                      <input type="text" class="form-control" [(ngModel)]="name" name="search" placeholder="search Items"/>
                   </div>
 
                   <div class="col-md-2">
-                      <button type="submit" class="btn btn-primary">Search</button>
+                      <button type="submit" (click)="search(name)" class="btn btn-primary">Search</button>
                   </div>
-
               </div>
           </div>
         <ul class="navbar-nav ml-auto">
