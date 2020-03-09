@@ -15,10 +15,10 @@ import com.onebay.onlineShopping.model.Book;
 public interface BookRepository extends JpaRepository<Book , Long>{
 	
 	@RestResource(path = "category")
-	Page<Book> findByCategoryId(Long id, Pageable pageable);
+	Page<Book> findByCategoryId(@Param("id") Long id, Pageable pageable);
 	
 	@RestResource(path = "book")
-	Page<Book> findByNameContaining(String name, Pageable pageable);
+	Page<Book> findByNameContaining(@Param("name") String name, Pageable pageable);
 	
 
 }
