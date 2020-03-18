@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterationComponent } from './registeration/registeration/registeration.component';
-import { UserService } from './service/user.service';
+import { UserService } from './services/user.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { from } from 'rxjs';
@@ -13,6 +13,7 @@ import { NavigationComponent } from './menu/navigation/navigation.component';
 import { FooterComponent } from './menu/footer/footer.component';
 import { CartComponent } from './cart/cart/cart.component';
 import { LoginComponent } from './Login/login/login.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LoginComponent } from './Login/login/login.component';
     NavigationComponent,
     FooterComponent,
     CartComponent,
-    LoginComponent
+    LoginComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

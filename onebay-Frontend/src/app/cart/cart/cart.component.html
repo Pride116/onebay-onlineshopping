@@ -1,19 +1,37 @@
-<table class="table table-stripped">
-    <thead>
-        <th>BookCover</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Date</th>
+<div class="container">
+    <table class="table table-stripped">
+        <thead>
+            <th>BookCover</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Date</th>
+            <th class="col-span-2">action</th>
 
-    </thead>
-    <tbody>
-        <tr *ngFor="let cart of cartbooks">
-            <td><img  [src]="cart.imageUrl" ></td>
-            <td>{{cart.name}}</td>
-            <td>{{cart.description}}</td>
-            <td>{{cart.unitPrice}}</td>
-            <td>{{cart.createdOn}}</td>
-        </tr>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cart of cartbooks">
+                <td><img [src]="cart.imageUrl" width="100px" height="110px"></td>
+                <td>{{cart.name}}</td>
+                <td>{{cart.description}}</td>
+                <td>{{cart.unitPrice| currency : 'R'}}</td>
+                <td>{{cart.createdOn}}</td>
+                <td>
+
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-danger" (click)="delete(cart)">Delete</button>
+                        </div>
+
+                       <hr/>
+                        <div class="col">
+                            <button type="submit" class="btn btn-warning">Edit</button>
+                        </div>
+
+                    </div>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

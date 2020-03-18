@@ -1,8 +1,8 @@
-
 <div class="col-md-6">
   <div class="row">
     <div class="col-md-5">
-      <input type="text" (onSubmit)="search(searchname)"class="form-control" [(ngModel)]="searchname" name="search" placeholder="search Items" />
+      <input type="text" (onSubmit)="search(searchname)" class="form-control" [(ngModel)]="searchname" name="search"
+        placeholder="search Items" />
     </div>
 
     <div class="col-md-2">
@@ -10,7 +10,7 @@
     </div>
   </div>
 </div>
-<br/>
+<br />
 
 <div class="row">
 
@@ -18,8 +18,7 @@
 
 
     <div class="list-group" *ngFor="let category of categorys">
-      <a routerLink="/books" class="list-group-item" (click)="getBycategory(category.id)"
-        routerLinkActive="text-red">{{category.categoryName}}</a>
+      <a routerLink="/book" class="list-group-item" (click)="getBycategory(category.id)">{{category.categoryName}}</a>
 
     </div>
 

@@ -2,6 +2,8 @@ package com.onebayshopping.pride.model;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Product {
 	
@@ -24,6 +26,7 @@ public class Product {
 	@Column(nullable = false)
 	private int quntity;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="category_id",nullable = false)
 	private Category category;
