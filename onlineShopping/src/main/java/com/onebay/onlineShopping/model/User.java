@@ -1,13 +1,20 @@
 package com.onebay.onlineShopping.model;
 
+import java.util.Collection;
+import java.util.Collections;
+
 import javax.persistence.*;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
 @Table(name="tbl_User")
-public class User {
+public class User{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -119,6 +126,7 @@ public class User {
 
 
 	public User() {}
-	
+
+
 
 }
