@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -27,7 +27,7 @@ public class UserController {
 	@Autowired
 	private UserRepository userrepo;
 	
-	@Autowired
+	/*@Autowired
 	private PasswordEncoder encoder;
 	
 	@PostMapping("/register")
@@ -37,14 +37,14 @@ public class UserController {
 		user.setPassword(encoder.encode(user.getPassword()));
 		userrepo.save(user);
 		return "Hi "+user.getFirstName()+" you are successfully registered ";
-	}
+	}*/
 	
 	@GetMapping("/list")
 	public List<User> getUsers(){
 		return userrepo.findAll();
 	}
 	
-	@GetMapping("/list/{id}")
+	@GetMapping("/list/{id}")																									
 	public Optional<User> getUserById(@PathVariable Long id){
 		
 		return userrepo.findById(id);

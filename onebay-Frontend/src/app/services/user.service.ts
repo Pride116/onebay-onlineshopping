@@ -20,7 +20,3 @@ export class UserService {
     return this.http.post<User>(this.baseUrl,user,{responseType:'text' as'json'});
   }
 }
-
-interface GetUsersResponse{
-  _embedded:{Users:User[];}
-}

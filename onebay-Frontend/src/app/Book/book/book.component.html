@@ -1,15 +1,3 @@
-<div class="col-md-6">
-  <div class="row">
-    <div class="col-md-5">
-      <input type="text" (onSubmit)="search(searchname)" class="form-control" [(ngModel)]="searchname" name="search"
-        placeholder="search Items" />
-    </div>
-
-    <div class="col-md-2">
-      <button type="submit" (click)="search(searchname)" class="btn btn-primary">Search</button>
-    </div>
-  </div>
-</div>
 <br />
 
 <div class="row">
@@ -30,12 +18,13 @@
 
     <div class="row">
 
-      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let book of books">
+      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let book of pageOfItems">
         <div class="card h-100">
-          <a routerLink="/cart"><img class="card-img-top img-responsive" [src]="book.imageUrl" alt=""></a>
+          <a routerLink="/book/details/{{book.id}}"><img class="card-img-top img-responsive" [src]="book.imageUrl"
+              alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a routerLink="/cart" (click)="getbook(book.id)">{{book.name}}</a>
+              <a routerLink="/book/details/{{book.id}}" (click)="getbook(book.id)">{{book.name}}</a>
             </h4>
             <h5>{{book.unitPrice | currency:'R'}}</h5>
             <p class="card-text text-truncate">{{book.description}}</p>
@@ -47,5 +36,11 @@
       </div>
 
 
+      <div *ngIf=" books?.length == 0" class="col-md-12 alert alert-danger">
+        <b>No books found</b>
+      </div>
+
+      
     </div>
+    <jw-pagination [items]="books" (changePage)="changePage($event)" [pageSize]="pageSize"></jw-pagination>
   </div>

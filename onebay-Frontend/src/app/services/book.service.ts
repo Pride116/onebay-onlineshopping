@@ -19,6 +19,11 @@ export class BookService {
     return this.http.get<Book[]>("http://localhost:8080/book/list");
       
   }
+  getbook(id:any):Observable<Book>{
+
+    return this.http.get<Book>("http://localhost:8080/book/"+id);
+      
+  }
 
   //finding a list of books by category id
  getbooksByCategory(id:any):Observable<Book[]>
